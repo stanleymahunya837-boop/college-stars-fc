@@ -347,18 +347,32 @@ background:#f3f3f3;
 }
 
 
-
 .stats-scroll{
-max-height:500px;
-
+max-height:260px;
 overflow-y:auto;
-
 overflow-x:hidden;
-
+border:1px solid #ddd;
 border-radius:10px;
 }
 
+.stats-table{
+width:100%;
+border-collapse:collapse;
+}
 
+.stats-table th,
+.stats-table td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+.stats-table th{
+background:#0b3d91;
+color:white;
+position:sticky;
+top:0;
+}
 
 #stats{
 
@@ -497,6 +511,7 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 <h2>Player Stats</h2>
 
 <div class="stats-scroll">
+
 <table class="stats-table">
 
 <tr>
