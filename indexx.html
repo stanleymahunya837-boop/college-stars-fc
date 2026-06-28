@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>College Stars FC</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#333;
+}
+
+header{
+background:#0b3d91;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+nav{
+background:#222;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:gold;
+}
+
+.hero{
+height:350px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+text-align:center;
+
+color:white;
+
+background:#0b3d91;
+}
+
+.hero h1{
+background:rgba(0,0,0,0.6);
+
+padding:20px 40px;
+
+border-radius:10px;
+
+z-index:2;
+}
+
+.watermark-logo{
+
+position:absolute;
+
+width:350px;
+
+opacity:0.15;
+
+z-index:1;
+}
+
+section{
+
+padding:40px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+h2{
+
+color:#0b3d91;
+
+margin-bottom:20px;
+
+}
+
+.players{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:15px;
+
+border-radius:10px;
+
+text-align:center;
+
+box-shadow:0 2px 5px rgba(0,0,0,.2);
+
+}
+
+.card img{
+
+width:100%;
+
+border-radius:10px;
+
+}
+
+/* FIXTURES */
+#fixtures{
+background:#0b3d91;
+padding:60px;
+text-align:center;
+}
+
+#fixtures h2{
+color:white;
+margin-bottom:35px;
+}
+
+.fixtures-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.fixture-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.date{
+font-size:18px;
+font-weight:bold;
+}
+
+.league{
+color:gray;
+margin:10px;
+}
+
+.match{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.team img{
+width:60px;
+height:60px;
+}
+
+.score{
+font-size:30px;
+font-weight:bold;
+border:2px solid #ddd;
+padding:10px 20px;
+}
+
+.stadium{
+margin:15px;
+letter-spacing:2px;
+color:gray;
+}
+
+button{
+background:#0b3d91;
+color:white;
+border:none;
+padding:10px 25px;
+cursor:pointer;
+}
+
+button:hover{
+background:#07285e;
+}
+
+@media(max-width:768px){
+.fixtures-grid{
+grid-template-columns:1fr;
+}
+}
+.match-info{
+
+display:none;
+
+margin-top:20px;
+
+background:#111;
+
+color:white;
+
+padding:20px;
+
+border-radius:10px;
+
+text-align:left;
+
+}
+
+.match-info h3{
+
+color:gold;
+
+margin-bottom:15px;
+
+}
+
+.match-info ul{
+
+padding-left:20px;
+
+}
+
+.match-info p{
+
+margin:10px 0;
+
+}
+}
+
+footer{
+
+background:#222;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:30px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>COLLEGE STARS FOOTBALL CLUB</h1>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#players">Players</a>
+
+<a href="#fixtures">Fixtures</a>
+
+<a href="#Gallery">Gallery</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="hero">
+
+<img src="college stars.jpeg"
+class="watermark-logo">
+
+<h1>WELCOME TO THE HOME OF COLLEGE STARS</h1>
+
+</div>
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<p>
+
+College Stars is an upcoming football team made up of talented, disciplined and dedicated young stars with a passion for excellence both on and off the pitch. Competing in the Maseno Premier League at Maseno University, the team is focused on developing talent and creating a strong football legacy.
+
+</p>
+
+</section>
+
+<section id="players">
+
+<h2>Players</h2>
+
+<div class="players">
+
+<div class="card">
+<img src="yellow.wt.JPG">
+<h3>TEAM COLLEGE</h3>
+</div>
+
+<div class="card">
+<img src="karisblack.JPG">
+<h3>KARIS</h3>
+<p>Defender</p>
+</div>
+
+<div class="card">
+<img src="stanblack.JPG">
+<h3>STANO</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="card">
+<img src="jonteblack.JPG">
+<h3>JOHNTE</h3>
+<p>Forward</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="fixtures">
+
+<h2>Fixtures & Results</h2>
+
+<div class="fixtures-grid">
+
+<div class="fixture-card">
+<p class="date">October 2026</p>
+<p class="league">Friendly Match</p>
+
+<div class="match">
+
+<div class="team">
+<img src="college stars.jpeg">
+<p>College Stars</p>
+</div>
+
+<div class="score">2 - 1</div>
+
+<div class="team">
+<img src="PIRATES.png">
+<p>Pirates</p>
+</div>
+
+</div>
+
+<p class="stadium">MOSQUE GROUNDS</p>
+
+<button onclick="toggleMatch(this)">
+View
+</button>
+
+<div class="match-info">
+
+<h3>Match Info</h3>
+
+
+<p><strong>Scorers:</strong></p>
+
+<ul>
+<li>Jhonte — 07'</li>
+<li>Stano — 57'</li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="fixture-card">
+
+<p class="date">September 2026</p>
+
+<p class="league">MPL</p>
+
+<div class="match">
+
+<div class="team">
+<img src="college stars.jpeg">
+<p>College Stars</p>
+</div>
+
+<div class="score">VS</div>
+
+<div class="team">
+<img src="PUAN.png">
+<p>Puan</p>
+</div>
+
+</div>
+
+<p class="stadium">Maseno Pitch A</p>
+
+<button onclick="toggleMatch(this)">
+view
+</button>
+<div class="Match-info">
+<h3>Upcoming Updates</h3>
+</div>
+
+</div>
+
+
+<div class="fixture-card">
+
+<p class="date">September 2026</p>
+
+<p class="league">MPL</p>
+
+<div class="match">
+
+<div class="team">
+<img src="college stars.jpeg">
+<p>College Stars</p>
+</div>
+
+<div class="score">1-0</div>
+
+<div class="team">
+<img src="HOMEBOYZ.png">
+<p>Maseno Homeboyz</p>
+</div>
+
+</div>
+
+<p class="stadium">college campus(CC)</p>
+
+<button onclick="toggleMatch(this)">
+View
+</button>
+
+<div class="match-info">
+
+<h3>Match Info</h3>
+
+
+<p><strong>Scorers:</strong></p>
+
+<ul>
+<li>Jhonte — 25'</li>
+<li>Karis — 67'</li>
+<li>Stano — 80'</li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="fixture-card">
+
+<p class="date">September 2026</p>
+
+<p class="league">MASENO PREMIER LEAGUE</p>
+
+<div class="match">
+
+<div class="team">
+<img src="college stars.jpeg">
+<p>College Stars</p>
+</div>
+
+<div class="score">VS</div>
+
+<div class="team">
+<img src="VETERANS.png">
+<p>Veterans</p>
+</div>
+
+</div>
+
+<p class="stadium">GSQ</p>
+
+<button onclick="toggleMatch(this)">
+view
+</button>
+<div class="Match-info">
+<h3>Upcoming Updates</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="gallery">
+
+<h2>
+<a href="https://drive.google.com/drive/folders/1xDUff1hLXLfSlHW4km8IQYp6orlpjRkH"
+target="_blank"
+Style="text-decoration:none;color:#0b3d91;">
+Gallery
+</a></h2>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Maseno University</p>
+
+<p>+254 704 420 958</p>
+
+<p>officialcollegestars@gmail.com</p>
+
+<p>Fc_C0llege_Stars</p>
+
+</section>
+
+<footer>
+
+© 2026 College Stars FC
+
+</footer>
+<script>
+
+function toggleMatch(button){
+
+let info =
+button.nextElementSibling;
+
+if(info.style.display==="block"){
+
+info.style.display="none";
+
+button.innerHTML="View";
+
+}
+
+else{
+
+info.style.display="block";
+
+button.innerHTML="Hide";
+
+}
+
+}
+
+</script>
+</body>
+</html>
