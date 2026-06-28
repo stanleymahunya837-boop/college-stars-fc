@@ -177,12 +177,25 @@ margin-bottom:35px;
 }
 
 .fixtures-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
+display:flex;
+overflow-x:auto;
 gap:20px;
+padding:10px;
+scroll-behavior:smooth;
+}
+
+.fixtures-grid::-webkit-scrollbar{
+height:8px;
+}
+
+.fixtures-grid::-webkit-scrollbar-thumb{
+background:white;
+border-radius:10px;
 }
 
 .fixture-card{
+min-width:350px;
+flex-shrink:0;
 background:white;
 padding:20px;
 border-radius:10px;
