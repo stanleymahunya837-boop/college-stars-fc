@@ -109,12 +109,29 @@ margin-bottom:20px;
 
 .players{
 
-display:grid;
+display:flex;
 
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+overflow-x:auto;
 
 gap:20px;
 
+padding:10px;
+
+scroll-behavior:smooth;
+
+}
+
+.players::webkit-scrollbar{
+height:8px;
+}
+.players::webkit-scrollbar{
+background:#0b3d91;
+boder-radius:10px;
+}
+.card{
+min-width:250px;
+flex-shrink:0;
+}
 }
 
 .card{
