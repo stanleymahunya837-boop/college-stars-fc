@@ -121,40 +121,29 @@ scroll-behavior:smooth;
 
 }
 
-.players::webkit-scrollbar{
-height:8px;
-}
-.players::webkit-scrollbar{
-background:#0b3d91;
-boder-radius:10px;
-}
-.card{
-min-width:250px;
-flex-shrink:0;
-}
+.players{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px;
+scroll-behavior:smooth;
 }
 
 .card{
+background:white;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,.2);
 
 min-width:200px;
-flex-shrink:0;
 
+flex-shrink:0;
 }
 
 .card img{
-
 width:100%;
-aspect-ratio:3/4;
-object-fit:contain;
-height:auto;
-
-display:block;
-
-margin:auto;
-
-
 border-radius:10px;
-background:white;
 
 }
 
