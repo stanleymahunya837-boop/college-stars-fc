@@ -584,6 +584,19 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 
 </div>
 
+<section id="Technical-bench">
+
+<h2>Technical Bench</h2>
+
+
+<div class="players" id="bench-list">
+
+
+</div>
+
+</section>
+
+
 </section>
 
 <section id="players">
@@ -1129,6 +1142,56 @@ html += `
 
 document.getElementById(
 "players-list"
+).innerHTML = html;
+
+});
+
+</script>
+
+
+<script>
+
+const benchURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTWvQLs9LNnfTtTbzxRnZlxnlC3Vuc16tdZ0sp6k4YV00Bb8BAenGr4twv2wVuWU3LVQUunSsLLW-Rw/pub?output=csv";
+
+fetch(benchURL)
+
+.then(r=>r.text())
+
+.then(data=>{
+
+const rows =
+data.trim().split("\n").slice(1);
+
+let html="";
+
+rows.forEach(row=>{
+
+const cols =
+row.replace(/\r/g,"").split(",");
+
+if(cols.length>=3){
+
+html += `
+
+<div class="card">
+
+<img src="${cols[0]}">
+
+<h3>${cols[1]}</h3>
+
+<p>${cols[2]}</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+document.getElementById(
+"bench-list"
 ).innerHTML = html;
 
 });
