@@ -862,7 +862,8 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 
 <h2>Fixtures & Results</h2>
 
-<div class="fixtures-grid">
+<div class="fixtures-grid" id="fixtures-list">
+
 
 <div class="fixture-card">
 <p class="date">Matchweek(TBC)</p>
@@ -1149,16 +1150,86 @@ x.style.display="block";
 
 </script>
 
+
 <script>
 
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_9CZZuy-GJnwaL468Kdl6K6HUJATnM-52244tsP-5r3WLh6QCshRpY_oOWZ74XuHxN8aqJYBXBcr_/pubhtml";
+/*
+UPDATE THIS LINK ONLY
+Replace YOUR_CSV_LINK with your Google Sheets CSV publish link
+*/
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_9CZZuy-GJnwaL468Kdl6K6HUJATnM-52244tsP-5r3WLh6QCshRpY_oOWZ74XuHxN8aqJYBXBcr_/pubhtml";
 
 fetch(sheetURL)
-.then(response => response.text())
-.then(data => {
-console.log("Sheet connected");
+
+.then(r=>r.text())
+
+.then(data=>{
+
+const rows =
+data.trim().split("\n").slice(1);
+
+let html="";
+
+rows.forEach(row=>{
+
+const cols =
+row.split(",");
+
+html += `
+
+<div class="fixture-card">
+
+<p class="date">${cols[0]}</p>
+
+<p class="league">${cols[1]}</p>
+
+<div class="match">
+
+<div class="team">
+
+<img src="college stars.jpeg">
+
+<p>College Stars</p>
+
+</div>
+
+<div class="score">
+
+${cols[3]}
+
+</div>
+
+<div class="team">
+
+<p>${cols[2]}</p>
+
+</div>
+
+</div>
+
+<p class="stadium">
+
+${cols[4]}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"fixtures-list"
+).innerHTML = html;
+
 });
 
 </script>
+
+
+
 </body>
 </html>
