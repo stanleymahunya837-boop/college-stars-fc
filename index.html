@@ -585,7 +585,20 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 
 <h2>Club History</h2>
 
-<div class="history-scroll">
+
+<div class="history-preview"
+onclick="toggleHistory()">
+
+<div class="history-icon">📖</div>
+
+<h3>Open Club History</h3>
+
+</div>
+
+<div class="history-scroll"
+id="historyGallery">
+
+
 
 <div class="history-card">
 <img src="history1.jpg">
@@ -928,12 +941,15 @@ button.innerHTML="Hide";
 
 <script>
 
+
 function toggleHistory(){
 
-let x =
+const x =
 document.getElementById("historyGallery");
 
-if(x.style.display==="block"){
+if(
+x.style.display==="flex"
+){
 
 x.style.display="none";
 
@@ -941,11 +957,13 @@ x.style.display="none";
 
 else{
 
-x.style.display="block";
+x.style.display="flex";
 
 }
 
 }
+
+
 
 </script>
 
