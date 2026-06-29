@@ -590,9 +590,7 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 
 <h2>Players</h2>
 
-<div class="players" id="stats-list">
-
-</div>
+<div class="players">
 
 <div class="card">
 <img src="yellow.wt.JPG">
@@ -1228,56 +1226,6 @@ ${cols[4]}
 document.getElementById(
 "fixtures-list"
 ).innerHTML = html;
-
-});
-
-</script>
-
-
-<script>
-
-const statsURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_9CZZuy-GJnwaL468Kdl6K6HUJATnM-52244tsP-5r3WLh6QCshRpY_oOWZ74XuHxN8aqJYBXBcr_/pub?output=csv";
-
-fetch(statsURL)
-
-.then(r=>r.text())
-
-.then(data=>{
-
-const rows =
-data.trim().split("\n").slice(1);
-
-let html="";
-
-rows.forEach(row=>{
-
-const cols =
-row.split(",");
-
-html += `
-
-<div class="card">
-
-<h3>${cols[0]}</h3>
-
-<p>Games Played: ${cols[1]}</p>
-
-<p>Goals: ${cols[2]}</p>
-
-<p>Assists: ${cols[3]}</p>
-
-<p>Clean Sheets: ${cols[4]}</p>
-
-</div>
-
-`;
-
-});
-
-document.getElementById(
-"stats-list"
-).innerHTML=html;
 
 });
 
