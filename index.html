@@ -522,6 +522,21 @@ color:white;
 }
 
 
+.stats-table tr.my-team{
+
+background:#ffd700;
+
+color:black;
+
+font-weight:bold;
+
+transform:scale(1.01);
+
+border-left:6px solid #00994d;
+
+}
+
+
 
 
 
@@ -1092,19 +1107,37 @@ if(cols.length>=8){
 
 let rowClass="";
 
-if(Number(cols[0])<=4)
+if(Number(cols[0])<=4){
+
 rowClass="top4";
 
-else if(Number(cols[0])>=18)
+}
+
+else if(Number(cols[0])>=18){
+
 rowClass="relegation";
 
-else
+}
+
+else{
+
 rowClass="mid";
+
+}
+
+if(
+cols[1]
+.toLowerCase()
+==="college stars"
+){
+
+rowClass="my-team";
+
+}
 
 html += `
 
 <tr class="${rowClass}">
-
 
 <td>${cols[0]}</td>
 <td>${cols[1]}</td>
@@ -1114,6 +1147,8 @@ html += `
 <td>${cols[5]}</td>
 <td>${cols[6]}</td>
 <td>${cols[7]}</td>
+
+
 
 </tr>
 
