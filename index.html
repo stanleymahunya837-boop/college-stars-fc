@@ -504,6 +504,26 @@ font-weight:bold;
 }
 
 
+.stats-table tr.top4{
+background:#0a7a38;
+color:white;
+font-weight:bold;
+}
+
+
+.stats-table tr.mid{
+background:#1f1f1f;
+}
+
+
+.stats-table tr.relegation{
+background:#8b0000;
+color:white;
+}
+
+
+
+
 
 </style>
 
@@ -1069,9 +1089,22 @@ row.replace(/\r/g,"").split(",");
 
 if(cols.length>=8){
 
+
+let rowClass="";
+
+if(Number(cols[0])<=4)
+rowClass="top4";
+
+else if(Number(cols[0])>=18)
+rowClass="relegation";
+
+else
+rowClass="mid";
+
 html += `
 
-<tr>
+<tr class="${rowClass}">
+
 
 <td>${cols[0]}</td>
 <td>${cols[1]}</td>
