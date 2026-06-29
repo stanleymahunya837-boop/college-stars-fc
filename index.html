@@ -590,44 +590,9 @@ College Stars is an upcoming football team made up of talented, disciplined and 
 
 <h2>Players</h2>
 
-<div class="players">
 
-<div class="card">
-<img src="yellow.wt.JPG">
-<h3>TEAM COLLEGE</h3>
-</div>
+<div class="players" id="players-list">
 
-<div class="card">
-<img src="karisblack.JPG">
-<h3>Karis</h3>
-<p>Defender</p>
-</div>
-
-<div class="card">
-<img src="stanbluee.JPG">
-<h3>Stano</h3>
-<p>Midfielder</p>
-</div>
-
-<div class="card">
-<img src="EDU.jpeg">
-<h3>Edu</h3>
-<p>Defender</p>
-</div>
-
-<div class="card">
-<img src="joshu.jpg">
-<h3>Joshu</h3>
-<p>Midfielder</p>
-</div>
-
-
-
-<div class="card">
-<img src="jonteblack.JPG">
-<h3>Jonte</h3>
-<p>Forward</p>
-</div>
 
 </div>
 
@@ -1114,6 +1079,56 @@ html += `
 
 document.getElementById(
 "league-body"
+).innerHTML = html;
+
+});
+
+</script>
+
+
+<script>
+
+const playersURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSI7w6jFlbjRNIqjp5dDb-jtBFUBQhtq4PPNZ7JIiSUN3WucvVsgzUun_TnNlPJ1UgD4nTw5yjFLwZu/pub?output=csv";
+
+fetch(playersURL)
+
+.then(r=>r.text())
+
+.then(data=>{
+
+const rows =
+data.trim().split("\n").slice(1);
+
+let html="";
+
+rows.forEach(row=>{
+
+const cols =
+row.replace(/\r/g,"").split(",");
+
+if(cols.length>=3){
+
+html += `
+
+<div class="card">
+
+<img src="${cols[0]}">
+
+<h3>${cols[1]}</h3>
+
+<p>${cols[2]}</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+document.getElementById(
+"players-list"
 ).innerHTML = html;
 
 });
