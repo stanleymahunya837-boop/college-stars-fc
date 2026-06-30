@@ -513,7 +513,7 @@ border-left:5px solid #7da453;
 
 .league-table tr.champion{
 
-border-bottom:8px solid #00a63e;
+border-bottom:3px solid #00a63e;
 
 }
 
@@ -521,7 +521,7 @@ border-bottom:8px solid #00a63e;
 
 .league-table tr.supercup{
 
-border-bottom:8px solid #0057ff;
+border-bottom:3px solid #0057ff;
 
 }
 
@@ -529,7 +529,7 @@ border-bottom:8px solid #0057ff;
 
 .league-table tr.relegation{
 
-border-bottom:8px solid #ff0000;
+border-bottom:3px solid #ff0000;
 
 }
 
@@ -1111,11 +1111,14 @@ rowClass="supercup";
 
 }
 
-else if(Number(cols[0])===18){
+
+else if(Number(cols[0])>=18){
 
 rowClass="relegation";
 
 }
+
+
 
 if(
 cols[1]
