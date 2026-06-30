@@ -367,17 +367,30 @@ box-shadow:0 2px 10px rgba(0,0,0,.2);
 
 }
 
+
 .history-card img{
 
 width:100%;
 
 height:220px;
 
-object-fit:contain;
+object-fit:cover;
 
 border-radius:10px;
 
 }
+
+.history-card p{
+
+margin-top:10px;
+
+text-align:center;
+
+white-space:normal;
+
+}
+
+
 footer{
 
 background:#222;
@@ -597,32 +610,6 @@ onclick="toggleHistory()">
 
 <div class="history-scroll"
 id="historyGallery">
-
-
-
-<div class="history-card">
-<img src="history1.jpg">
-<h3>Foundation</h3>
-<p>College Stars FC was formed to develop football talent.</p>
-</div>
-
-<div class="history-card">
-<img src="history2.jpg">
-<h3>First Season</h3>
-<p>Competed in Maseno Premier League.</p>
-</div>
-
-<div class="history-card">
-<img src="history3.jpg">
-<h3>Growth</h3>
-<p>Expanded squad and built club identity.</p>
-</div>
-
-<div class="history-card">
-<img src="history4.jpg">
-<h3>Today</h3>
-<p>Building future football stars.</p>
-</div>
 
 </div>
 
@@ -1282,6 +1269,53 @@ html += `
 document.getElementById(
 "bench-list"
 ).innerHTML = html;
+
+});
+
+</script>
+
+
+<script>
+
+const historyURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vRX84lt_LGDTbVBGnz0yKYldjP2npfEtqYnUvC8pPoTThGyM8u_VpG92vnXmV_JJSwMKsbQWU_3UKVV/pub?output=csv";
+
+fetch(historyURL)
+
+.then(r=>r.text())
+
+.then(data=>{
+
+const rows =
+data.trim()
+.split("\n")
+.slice(1);
+
+let html="";
+
+rows.forEach(row=>{
+
+const cols =
+row.replace(/\r/g,"").split(",");
+
+html += `
+
+<div class="history-card">
+
+<img src="${cols[0]}">
+
+<p>${cols[1]}</p>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"historyGallery"
+).innerHTML=
+html;
 
 });
 
