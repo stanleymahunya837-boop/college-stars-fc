@@ -24,6 +24,78 @@ background:#f4f4f4;
 color:#333;
 }
 
+
+/* SPLASH SCREEN */
+
+#splash-screen{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:#0b3d91;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+}
+
+.splash-logo{
+
+width:220px;
+
+opacity:0;
+
+animation:
+showLogo 2s forwards;
+
+animation-delay:2s;
+
+}
+
+@keyframes showLogo{
+
+0%{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.fade-out{
+
+opacity:0;
+
+transition:2s;
+
+pointer-events:none;
+
+}
+
+
+
 header{
 background:#0b3d91;
 color:white;
@@ -544,6 +616,79 @@ border-left:5px solid #7da453;
 
 
 
+/* SPLASH SCREEN */
+
+#splash-screen{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:#0047AB;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:opacity 1.5s;
+
+}
+
+.splash-logo{
+
+width:220px;
+
+opacity:0;
+
+animation:
+showLogo 1.5s ease forwards;
+
+animation-delay:1s;
+
+}
+
+@keyframes showLogo{
+
+0%{
+
+opacity:0;
+
+transform:
+scale(.7);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+scale(1);
+
+}
+
+}
+
+.fade-out{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+
+
 
 
 
@@ -552,6 +697,17 @@ border-left:5px solid #7da453;
 </head>
 
 <body>
+
+
+<div id="splash-screen">
+
+<img
+src="college stars.jpeg"
+class="splash-logo">
+
+</div>
+
+
 
 <header>
 
@@ -1318,6 +1474,30 @@ document.getElementById(
 html;
 
 });
+
+</script>
+
+
+
+<script>
+
+window.onload=function(){
+
+setTimeout(function(){
+
+document
+.getElementById(
+"splash-screen"
+)
+
+.classList
+.add(
+"fade-out"
+);
+
+},7000);
+
+};
 
 </script>
 
